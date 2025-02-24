@@ -41,10 +41,9 @@ import cpw.mods.fml.common.event.FMLServerStoppedEvent;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.EntityRegistry;
 
-@Mod(modid = LookingGlass.MODID, name = "LookingGlass", version = LookingGlass.VERSION)
+@Mod(modid = LookingGlass.MODID, name = "LookingGlass", version = Tags.VERSION)
 public class LookingGlass {
 	public static final String	MODID	= "LookingGlass";
-	public static final String	VERSION	= "@VERSION@";
 
 	@Instance(LookingGlass.MODID)
 	public static LookingGlass	instance;

@@ -1,9 +1,8 @@
 package com.xcompwiz.lookingglass.api.animator;
 
+import com.xcompwiz.lookingglass.api.view.IViewCamera;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ChunkCoordinates;
-
-import com.xcompwiz.lookingglass.api.view.IViewCamera;
 
 /**
  * This is a badly approximated "portal render" animator, which makes the camera move based on what direction the player is from some defined point. It doesn't

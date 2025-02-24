@@ -1,10 +1,9 @@
 package com.xcompwiz.lookingglass.api.animator;
 
+import com.xcompwiz.lookingglass.api.view.IViewCamera;
 import net.minecraft.block.Block;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.world.IBlockAccess;
-
-import com.xcompwiz.lookingglass.api.view.IViewCamera;
 
 /**
  * This is a standard sample implementation of a camera animator. It simply uses the target location as a LookAt target and does a fly pivot around it. It can

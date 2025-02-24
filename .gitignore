@@ -17,6 +17,7 @@ __*
 /gradlew
 /gradlew.bat
 /forge*.zip
+/.idea/
 
 /build.properties
 /locations.gradle

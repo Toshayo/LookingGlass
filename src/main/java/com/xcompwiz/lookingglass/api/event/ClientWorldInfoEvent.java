@@ -1,7 +1,7 @@
 package com.xcompwiz.lookingglass.api.event;
 
-import net.minecraft.entity.player.EntityPlayerMP;
 import cpw.mods.fml.common.eventhandler.Event;
+import net.minecraft.entity.player.EntityPlayerMP;
 
 /**
  * Called on the server side to allow mods to send dimension information to clients
