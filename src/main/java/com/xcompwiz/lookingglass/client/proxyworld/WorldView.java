@@ -4,6 +4,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.client.particle.EffectRenderer;
 import net.minecraft.client.renderer.RenderGlobal;
+import net.minecraft.client.shader.Framebuffer;
 import net.minecraft.util.ChunkCoordinates;
 import net.minecraft.util.MathHelper;
 
@@ -31,10 +32,10 @@ public class WorldView implements IWorldView {
 	private boolean					hasChunks;
 	private long					last_render_time	= -1;
 
-	private RenderGlobal			renderGlobal;
-	private EffectRenderer			effectRenderer;
+	private final RenderGlobal			renderGlobal;
+	private final EffectRenderer			effectRenderer;
 
-	private FrameBufferContainer	fbo;
+	private Framebuffer fbo;
 
 	public WorldView(WorldClient worldObj, ChunkCoordinates coords, int width, int height) {
 		this.width = width;
@@ -60,11 +61,11 @@ public class WorldView implements IWorldView {
 
 	@Override
 	public boolean isReady() {
-		return fbo == null ? false : ready;
+		return fbo != null && ready;
 	}
 
 	public boolean hasChunks() {
-		return fbo == null ? false : hasChunks;
+		return fbo != null && hasChunks;
 	}
 
 	@Override
@@ -80,8 +81,8 @@ public class WorldView implements IWorldView {
 		return temp;
 	}
 
-	public int getFramebuffer() {
-		return fbo == null ? 0 : fbo.getFramebuffer();
+	public Framebuffer getFramebuffer() {
+		return fbo;
 	}
 
 	public RenderGlobal getRenderGlobal() {
@@ -94,7 +95,7 @@ public class WorldView implements IWorldView {
 
 	@Override
 	public int getTexture() {
-		return fbo == null ? 0 : fbo.getTexture();
+		return fbo == null ? 0 : fbo.framebufferTexture;
 	}
 
 	@Override

@@ -33,6 +33,16 @@ tasks.processIdeaSettings.configure {
 	dependsOn(tasks.injectTags)
 }
 
+tasks.deobfuscateMergedJarToSrg.configure {
+	accessTransformerFiles.from("src/main/resources/META-INF/lookingglass_at.cfg")
+}
+
+// add AT to meta-inf
+jar {
+	manifest {
+		attributes 'FMLAT': 'lookingglass_at.cfg'
+	}
+}
 
 processResources {
 	duplicatesStrategy = DuplicatesStrategy.INCLUDE
